@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:53 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/10 10:30:00 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/10 10:47:08 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main()
 	std::cout << "################  Instanciation test decrement" << std::endl;
 	try
 	{
-		Bureaucrat b = Bureaucrat("Pierre", 145);
+		Bureaucrat b = Bureaucrat("Pierre", 146);
 		while (true)
 		{	
 			b.decrementGrade();
@@ -61,4 +61,9 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << "################ test copy ctor" << std::endl;
+		Bureaucrat b = Bureaucrat("Pierre", 145);
+		Bureaucrat c(b);
+		std::cout << b << std::endl;
+		std::cout << c << std::endl;
 }
