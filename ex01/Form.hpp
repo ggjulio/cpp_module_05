@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:52:54 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/10 19:19:21 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/10 20:28:01 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ public:
 	Form(const Form &);
 	~Form();
 
+	bool 	getName();
 	bool 	getIsSigned();
 	int		getMinGradeToSign();
 	int		getMinGradeToExec();
-	void	setminGradeToSign(int grade);
-	void	setminGradeToExec(int grade);
+	// void	setminGradeToSign(int grade);
+	// void	setminGradeToExec(int grade);
 
 	void	beSigned(const Bureaucrat &);
 	
@@ -44,7 +45,7 @@ public:
 		virtual const char* what(const std::string & name) const throw();
 	};
 	class GradeTooHighException: public std::exception {
-		virtual const char* what()const std::string & name const throw();
+		virtual const char* what(const std::string & name) const throw();
 	};
 };
 

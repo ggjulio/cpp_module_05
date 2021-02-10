@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:52:57 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/10 19:19:35 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/10 20:28:24 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Form::Form(const std::string & name, int minimumGradeToSign, int minimumGradeToE
 	: _name(name), _minGradeToExec(minimumGradeToExec),
 	_minGradeToSign(minimumGradeToSign), _isSigned(false)
 {
-	setminGradeToSign(minimumGradeToSign);
+	Validate(minimumGradeToSign);
 	setminGradeToSign(minimumGradeToExec);
 }
 Form::Form(const std::string & name, int minimumGradeToSign, int minimumGradeToExec)
@@ -30,17 +30,17 @@ Form & Form::operator=(const Form &){}
 Form::~Form(){}
 
 
+bool 	Form::getName(){ return _name;}
 bool 	Form::getIsSigned(){ return _isSigned;}
 int		Form::getMinGradeToSign(){ return _minGradeToSign;}
 int		Form::getMinGradeToExec(){ return _minGradeToExec;}
 
-void	Form::Vali(int grade){
-	
+void	Form::Validate(int grade){
 	if (grade < 1)
-		throw Form::GradeTooHighException();	
+		throw Form::GradeTooHighException("fe");	
 	else if (grade > 150)
 		throw Form::GradeTooLowException("fwfw");
-	_minGradeToSign = grade;
+	// _minGradeToSign = grade;
 }
 void	Form::setminGradeToExec(int grade){
 	
