@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:52:54 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/10 20:28:01 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/11 13:02:44 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ public:
 	Form(const Form &);
 	~Form();
 
-	bool 	getName();
+	std::string  getName();
 	bool 	getIsSigned();
 	int		getMinGradeToSign();
 	int		getMinGradeToExec();
-	// void	setminGradeToSign(int grade);
-	// void	setminGradeToExec(int grade);
 
 	void	beSigned(const Bureaucrat &);
+	void	validate(int grade);
+
 	
 	class GradeTooLowException: public std::exception {
 		virtual const char* what(const std::string & name) const throw();
