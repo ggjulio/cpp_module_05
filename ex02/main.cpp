@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:53 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 04:19:29 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 04:24:46 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -66,9 +67,9 @@ int main()
 			catch (std::exception &e){std::cout << ceo.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
 	}
 	std::cout << std::endl	<< "########################################################" << std::endl;
-	std::cout 	<< "################  Test Presidentia;PardonForm  ############" << std::endl;
+	std::cout 	<< "################  Test PresidentiaLPardonForm  ############" << std::endl;
 	{
-		RobotomyRequestForm f = RobotomyRequestForm("Home");
+		PresidentialPardonForm f = PresidentialPardonForm("Home");
 		Bureaucrat s = Bureaucrat("Stagiaire", 26);
 		Bureaucrat p = Bureaucrat("Pierre", 25);
 		Bureaucrat cro = Bureaucrat("CRO", 6);
