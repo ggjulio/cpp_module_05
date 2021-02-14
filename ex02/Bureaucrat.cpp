@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:47 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 00:37:32 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 03:30:45 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ void	Bureaucrat::signForm(Form &form){
 	form.beSigned(*this);
 }
 
-
+void	Bureaucrat::executeForm(const Form &form){
+	form.execute(*this);
+}
 
 std::ostream & operator<<(std::ostream &os, const Bureaucrat & b){
 	os << b.getName() << ", bureaucrat grade " << b.getGrade(); 

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:51 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 00:37:20 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 03:25:18 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
 	void	decrementGrade();
 
 	void	signForm(Form &);
+	void	executeForm(const Form &);
 
 
 	class GradeTooLowException: public std::exception {

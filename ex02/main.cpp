@@ -6,119 +6,87 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:53 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 02:07:39 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 04:19:29 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-	std::cout << "################  Test instanciation error too high ############" << std::endl;
-	try{
-		Bureaucrat b = Bureaucrat("Pierre Boss", 0);
-	}
-	catch (std::exception &e)
+	std::cout << "################  Test Shrubbery  ############" << std::endl;
 	{
-		std::cout << e.what() << std::endl;
+		ShrubberyCreationForm f = ShrubberyCreationForm("Home");
+		Bureaucrat s = Bureaucrat("Stagiaire", 146);
+		Bureaucrat p = Bureaucrat("Pierre", 145);
+		Bureaucrat cro = Bureaucrat("CRO", 138);
+		Bureaucrat ceo = Bureaucrat("CEO", 137);
+		std::cout << f << std::endl << std::endl;			
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (Form::FormNotSignedException &e){std::cout << ceo.getName() << " can't execute it ! Form \"" << f.getName() << "\" not signed !  |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{s.signForm(f); std::cout << s.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << s.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << s.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{p.signForm(f); std::cout << p.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << p.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << p.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(cro);	std::cout << cro.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << cro.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << ceo.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
 	}
-
-	std::cout << "################  Test instanciation error too low ############" << std::endl;
-	try{
-		Bureaucrat c = Bureaucrat("Pierre", 151);
-	}
-	catch (std::exception &e)
+	std::cout << std::endl	<< "########################################################" << std::endl;
+	std::cout 	<< "################  Test RobotomyRequestForm  ############" << std::endl;
 	{
-		std::cout << e.what() << std::endl;
+		RobotomyRequestForm f = RobotomyRequestForm("Home");
+		Bureaucrat s = Bureaucrat("Stagiaire", 73);
+		Bureaucrat p = Bureaucrat("Pierre", 72);
+		Bureaucrat cro = Bureaucrat("CRO", 46);
+		Bureaucrat ceo = Bureaucrat("CEO", 45);
+		std::cout << f << std::endl << std::endl;			
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (Form::FormNotSignedException &e){std::cout << ceo.getName() << " can't execute it ! Form \"" << f.getName() << "\" not signed !  |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{s.signForm(f); std::cout << s.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << s.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << s.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{p.signForm(f); std::cout << p.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << p.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << p.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(cro);	std::cout << cro.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << cro.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << ceo.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
 	}
-
-	std::cout << "################  Test increment" << std::endl;
-	try
+	std::cout << std::endl	<< "########################################################" << std::endl;
+	std::cout 	<< "################  Test Presidentia;PardonForm  ############" << std::endl;
 	{
-		Bureaucrat b = Bureaucrat("Pierre", 5);
-		while (true)
-		{	
-			b.incrementGrade();
-			std::cout << b << std::endl;
-		}
+		RobotomyRequestForm f = RobotomyRequestForm("Home");
+		Bureaucrat s = Bureaucrat("Stagiaire", 26);
+		Bureaucrat p = Bureaucrat("Pierre", 25);
+		Bureaucrat cro = Bureaucrat("CRO", 6);
+		Bureaucrat ceo = Bureaucrat("CEO", 5);
+		std::cout << f << std::endl << std::endl;			
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (Form::FormNotSignedException &e){std::cout << ceo.getName() << " can't execute it ! Form \"" << f.getName() << "\" not signed !  |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{s.signForm(f); std::cout << s.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << s.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << s.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{p.signForm(f); std::cout << p.getName() << " has signed form \"" << f.getName() << "\"." << std::endl;}
+			catch (std::exception &e){std::cout << p.getName() << " can't sign \"" << f.getName() << "\". |actual grade:" << p.getGrade() << " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(cro);	std::cout << cro.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << cro.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+		std::cout << "--------------------" << std::endl;		
+			try{f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
+			catch (std::exception &e){std::cout << ceo.getName() << " can't execute it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;}
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "################  Test decrement" << std::endl;
-	try
-	{
-		Bureaucrat b = Bureaucrat("Pierre", 146);
-		while (true)
-		{	
-			b.decrementGrade();
-			std::cout << b << std::endl;
-		}
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << "################ Test copy ctor" << std::endl;
-	{
-		Bureaucrat b = Bureaucrat("Pierre", 145);
-		Bureaucrat c(b);
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-	}
-	std::cout << std::endl	<< "##################################" << std::endl
-							<< "#############  ex01  #############" << std::endl
-							<< "##################################" << std::endl;
-	std::cout << "################  Test Grade limits Sign ############" << std::endl;
-		try{Form f = Form("MyForm", 0, 5);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 151, 5);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 150, 5);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 1, 5);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-	std::cout << "################  Test Grade limits Exec ############" << std::endl;
-		try{Form f = Form("MyForm", 5, 0);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 5, 151);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 5, 1);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-		try{Form f = Form("MyForm", 5, 150);} catch (std::exception &e)	{std::cout << e.what() << std::endl;}
-	std::cout << "################  Test SignForm: too low ############" << std::endl;
-	{
-		Form f = Form("MyForm", 10, 5);
-		Bureaucrat b = Bureaucrat("Pierre", 12);
-		try{
-			std::cout << f << std::endl;			
-			b.signForm(f);
-			std::cout << b.getName() << " has signed form \"" << f.getName() << "\"." << std::endl; 
-		}
-		catch (std::exception &e)
-		{
-			std::cout << b.getName()
-				<< " can't sign \"" << f.getName() << "\". |actual grade:" << b.getGrade()
-				<< " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;
-		}
-		std::cout << f << std::endl;			
-	}
-	std::cout << "################  Test SignForm: Ok ############" << std::endl;
-	{
-		Form f = Form("MyForm", 10, 5);
-		Bureaucrat b = Bureaucrat("Pierre", 10);
-		try{
-			std::cout << f << std::endl;			
-			b.signForm(f);
-			std::cout << b.getName() << " has signed form \"" << f.getName() << "\"." << std::endl; 
-		}
-		catch (std::exception &e)
-		{
-			std::cout << b.getName()
-				<< " can't sign \"" << f.getName() << "\". |actual grade:" << b.getGrade()
-				<< " | minimum needed grade:" << f.getMinGradeToSign() << std::endl;
-		}
-		std::cout << f << std::endl;			
-	}
-
-	std::cout << std::endl	<< "##################################" << std::endl
-							<< "#############  ex02  #############" << std::endl
-							<< "##################################" << std::endl;
-	std::cout << "################  Test Shruberry ############" << std::endl;
 }
