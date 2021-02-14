@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:53 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 05:07:38 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:17:27 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void testForm(Form &f, Bureaucrat &s, Bureaucrat &p, Bureaucrat &cro, Bureaucrat
 {
 	std::cout << f << std::endl << std::endl;			
 		try{
-			f.execute(ceo);
+			ceo.executeForm(f);
 			std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;
 		}
 		catch (Form::FormNotSignedException &e){
@@ -46,7 +46,7 @@ void testForm(Form &f, Bureaucrat &s, Bureaucrat &p, Bureaucrat &cro, Bureaucrat
 		}
 	std::cout << "--------------------" << std::endl;		
 		try{
-			f.execute(cro);
+			cro.executeForm(f);
 			std::cout << cro.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << cro.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;
 		}
 		catch (std::exception &e){
@@ -54,7 +54,8 @@ void testForm(Form &f, Bureaucrat &s, Bureaucrat &p, Bureaucrat &cro, Bureaucrat
 		}
 	std::cout << "--------------------" << std::endl;		
 		try{
-			f.execute(ceo);	std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;
+			ceo.executeForm(f);
+			std::cout << ceo.getName() << " executed it ! \"" << f.getName() << "\". |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;
 		}
 		catch (std::exception &e){
 			std::cout << ceo.getName() << " can't execute \"" << f.getName() << "\" ! |actual grade:" << ceo.getGrade() << " | minimum needed grade:" << f.getMinGradeToExec() << std::endl;
