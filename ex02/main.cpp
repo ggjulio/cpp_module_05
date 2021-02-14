@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:06:53 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 04:43:51 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:07:38 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int main()
 	std::cout << std::endl	<< "########################################################" << std::endl;
 	std::cout 	<< "################  Test RobotomyRequestForm  ############" << std::endl;
 	{
-		RobotomyRequestForm f = RobotomyRequestForm("Home");
+		RobotomyRequestForm f = RobotomyRequestForm("Koala");
 		Bureaucrat s = Bureaucrat("Stagiaire", 73);
 		Bureaucrat p = Bureaucrat("Pierre", 72);
 		Bureaucrat cro = Bureaucrat("CRO", 46);
@@ -88,7 +88,7 @@ int main()
 	std::cout << std::endl	<< "########################################################" << std::endl;
 	std::cout 	<< "################  Test PresidentiaLPardonForm  ############" << std::endl;
 	{
-		PresidentialPardonForm f = PresidentialPardonForm("Home");
+		PresidentialPardonForm f = PresidentialPardonForm("Kanye");
 		Bureaucrat s = Bureaucrat("Stagiaire", 26);
 		Bureaucrat p = Bureaucrat("Pierre", 25);
 		Bureaucrat cro = Bureaucrat("CRO", 6);
