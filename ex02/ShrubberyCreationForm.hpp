@@ -6,16 +6,15 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 01:08:29 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 03:50:54 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 04:30:19 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_H
 #define SHRUBBERYCREATIONFORM_H
 
-#include <iostream>
 #include "Form.hpp"
-#include  "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 class ShrubberyCreationForm: public Form
 {

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 01:08:29 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/14 04:22:34 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/14 04:31:05 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PRESIDENTIAL_PARDON_FORM_H
 
 #include "Form.hpp"
-#include  "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 class PresidentialPardonForm: public Form
 {
